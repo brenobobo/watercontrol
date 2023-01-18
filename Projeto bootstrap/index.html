@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Water Control</title>
+
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+<body class="container">
+
+
+<div id="preenchimento" class="border">
+	<!-- adicionando um acition, para quando clicar no botão já ir para outra página-->
+	<h1 class="text-center">Preencha as informações para calcularmos a quantidade necessária de água</h1>
+
+	<form id= "preencher" action="resultado.html">
+		<input id="nome" class="form-control form-control-lg" name="nome" type="text" placeholder="Nome" aria-label=".form-control-lg example">
+
+		<input id="idade" class="form-control form-control-lg" type="text" placeholder="Idade" name="idade" aria-label=".form-control-lg example">
+
+		<input id="altura"class="form-control form-control-lg" type="text" placeholder="Altura em cm" name="altura" aria-label=".form-control-lg example">
+
+		<input id="peso" class="form-control form-control-lg" type="text" placeholder="Peso" name="peso" aria-label=".form-control-lg example">
+	<a href="">
+
+		<!-- usei o onclick para chamar a função do javascript-->
+		<input type="submit" name="Enviar" onclick="pegarValoresECalcular()" class="btn btn-light"></a>
+	</form>
+
+
+	<script type="text/javascript">
+
+		// fiz uma função para pegar os valores
+		function pegarValoresECalcular(){
+		
+		// não cheguei a ensinar isso pra vocês, mas é um jeito de transferir os dados para outra página
+ 		var dados = JSON.stringify({
+ 			// coletando os dados do campo altura, embora não precisa disso, mas é interessante pra exibir alguma coisa
+            altura    : document.querySelector("input[name=altura]").value;
+            // coletando os dados do campo peso, valor de fato que vamos precisar
+            peso    : document.querySelector("input[name=peso]").value;
+
+            //se quisesse passar mais dados, só colocar mais desse elementos
+        });
+
+ 		// salvando em uma espécie de banco de dados rápido
+        localStorage.setItem("storage", JSON.stringify(dados));
+        
+       }
+
+
+	</script>
+</div>
+<h2 id="campo"></h2>
+</body>
+</html>

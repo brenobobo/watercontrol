@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Water Control</title>
+
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="estilo.css">
+
+
+
+</head>
+<body>
+
+	<div id="corpo">
+		<h1> A quantidade de água que você terá que beber é:</h1>
+		<input id="resul" class="form-control form-control-lg" name="resul" type="text" placeholder="Resultado" aria-label=".form-control-lg example" readonly>
+
+	</div>
+
+<script type="text/javascript">
+	// coletando os dados que tinha salvo
+	var registro = localStorage.getItem("storage");
+
+        var parse = JSON.parse(registro);
+        var obj = JSON.parse(parse);
+        
+        var peso=obj.peso;
+
+        var frase = " ml"
+        // variável calculo que guarda o resultado do calculo
+        var calculo = peso*35;
+	// fiz uma firula só pra exibir o ml junto da número
+        var resultado = calculo + frase;
+	// usando os dados e colocando no campo
+        document.getElementById('resul').value = resultado;
+      
+</script>
+</body>
+</html>

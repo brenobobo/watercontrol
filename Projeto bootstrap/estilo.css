@@ -1,0 +1,33 @@
+.marcador{
+	background: lightpink;
+	border: 1px solid rebeccapurple;
+}
+
+.marcador2{
+	background: blueviolet;
+	border: 1px solid darkred;
+}
+
+body{
+	background-color: skyblue;
+	padding: 100px;
+}
+
+input{
+	margin: 20px;
+}
+
+#corpo{
+	margin: 100px;
+	padding-right: 50px;
+}
+h1{
+	padding-left: 20px;
+}
+
+#preenchimento{
+	background-color: #0196e4;
+	padding-right: 50px;
+	padding-top:30px;
+	padding-left: 10px;
+}
